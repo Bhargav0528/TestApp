@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context="com.example.bhargav.testapp.Authentication.LoginActivity"
+   >
+
+    <EditText
+        android:id="@+id/etlogin"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:hint="Email"
+        android:layout_alignStart="@+id/etpassword"
+        android:backgroundTint="#FFD740"
+        android:textColorHint="#FFD740"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="320dp"/>
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:inputType="textPassword"
+        android:id="@+id/etpassword"
+        android:hint="Password"
+        android:textColorHint="#FFD740"
+        android:backgroundTint="#FFD740"
+        android:layout_below="@+id/etlogin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/linearLayout">
+
+        <Button
+            android:id="@+id/btLogin"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/border"
+            android:text="Login"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/border"
+            android:text="Sign Up"
+            android:id="@+id/tvregister"
+            android:textColor="#000000"
+            android:textSize="20sp"/>
+    </LinearLayout>
+
+
+
+
+
+        <TextView
+            android:id="@+id/changepas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forgot Password"
+            android:textColor="#FFD740"
+            android:textSize="15sp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/etpassword"
+            android:layout_marginBottom="30dp"/>
+
+
+    <ProgressBar
+        android:id="@+id/pb"
+        android:layout_width="36dp"
+        android:layout_height="39dp"
+        android:layout_gravity="center"
+        android:indeterminateTint="#FFD740"
+        android:layout_alignTop="@+id/changepas"
+        android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "485708474140",
+    "firebase_url": "https://test-a1433.firebaseio.com",
+    "project_id": "test-a1433",
+    "storage_bucket": "test-a1433.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:485708474140:android:a9d428fafa7f779d",
+        "android_client_info": {
+          "package_name": "com.example.bhargav.testapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "485708474140-vpmbev5vbp8qvinmresrerl74oh327lt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bhargav.testapp",
+            "certificate_hash": "fd75bcf4966a44f727ac28cedef0ae0a61e4859b"
+          }
+        },
+        {
+          "client_id": "485708474140-mnbe1pjoha2fu2oflm3jhg73kppd7gq3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbKQpA1S0p5YAxhrikSC9bI3WvJqeHUZA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "485708474140-mnbe1pjoha2fu2oflm3jhg73kppd7gq3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
