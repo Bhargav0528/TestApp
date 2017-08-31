@@ -5,7 +5,7 @@ package com.example.bhargav.testapp;
  */
 
 public class ModelClass {
-    String name,description;
+    String name;
 
 
     public ModelClass() {
@@ -20,11 +20,4 @@ public class ModelClass {
     }
 
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }

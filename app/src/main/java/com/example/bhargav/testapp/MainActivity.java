@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.bhargav.testapp.Authentication.SettingsActivity;
 import com.google.firebase.auth.FirebaseAuth;
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         //Ya it is showing the value see the  monitor
         db = FirebaseDatabase.getInstance().getReference();
 
-        db.child("Questions").addValueEventListener(new ValueEventListener() {
+        db.child("week").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot Postsnapshot : dataSnapshot.getChildren())
@@ -94,6 +95,23 @@ public class MainActivity extends AppCompatActivity {
 
         adapter = new CustomAdapter(MainActivity.this, models);
         recyclerView.setAdapter(adapter);
+
+        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerView, new ClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                 ModelClass model = models.get(position);
+                Toast.makeText(getApplicationContext(), model.getName() + " is selected!", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(getApplicationContext(),QuestionListActivity.class);
+                intent.putExtra("weekname",model.getName());
+                startActivity(intent);
+            }
+
+            @Override
+            public void onLongClick(View view, int position) {
+
+            }
+        }));
     }
 
     //Settings button
@@ -111,5 +129,10 @@ public class MainActivity extends AppCompatActivity {
 
                 return super.onOptionsItemSelected(item);
         }
+    }
+    public interface ClickListener {
+        void onClick(View view, int position);
+
+        void onLongClick(View view, int position);
     }
 }

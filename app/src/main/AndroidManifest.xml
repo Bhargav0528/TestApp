@@ -36,7 +36,9 @@
             android:label="Settings" />
         <activity android:name=".Authentication.ChangespassActivity" />
         <activity android:name=".QuestionsViewActivity" />
-        <activity android:name=".ShowQuestionActivity"></activity>
+        <activity android:name=".ShowQuestionActivity" />
+        <activity android:name=".QuestionListActivity" />
+        <activity android:name=".QuestionActivity"></activity>
     </application>
 
 </manifest>

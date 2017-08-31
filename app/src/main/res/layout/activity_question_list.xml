@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.bhargav.testapp.QuestionListActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/quesstatus"
+        android:layout_toLeftOf="@+id/question1"
+        android:layout_marginTop="60dp"
+        />
+
+    <ImageButton
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/num1"
+        android:scaleType="centerInside"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:id="@+id/question1"
+        android:layout_width="300dp"
+        android:layout_height="150dp" />
+    <ImageButton
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/question1"
+        android:src="@drawable/num2"
+        android:scaleType="centerInside"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:id="@+id/question2"
+        android:layout_width="300dp"
+        android:layout_height="150dp" />
+    <ImageButton
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/question2"
+        android:src="@drawable/num3"
+        android:scaleType="centerInside"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:id="@+id/question3"
+        android:layout_width="300dp"
+        android:layout_height="150dp" />
+
+
+</RelativeLayout>

@@ -28,9 +28,18 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
     @Override
     public CustomAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext())
+        final View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.model, parent, false);
              ViewHolder viewHolder = new ViewHolder(v);
+
+        /*v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Context c = v.getContext();
+                Intent intent = new Intent(c, QuestionsViewActivity.class);
+                c.startActivity(intent);
+            }
+        });*/
         return viewHolder;
     }
 
@@ -40,7 +49,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         ModelClass model = models.get(position);
 
         holder.nameTxt.setText(model.getName());
-        holder.description.setText(model.getDescription());
+
     }
 
     @Override
@@ -52,13 +61,12 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     class ViewHolder extends RecyclerView.ViewHolder {
 
         public TextView nameTxt;
-        public TextView description;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
             nameTxt = itemView.findViewById(R.id.nameTxt);
-            description = itemView.findViewById(R.id.descTxt);
+
         }
     }
 }
