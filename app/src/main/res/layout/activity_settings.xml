@@ -4,32 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
     tools:context="com.example.bhargav.testapp.Authentication.SettingsActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/toolbar"
+        android:background="@drawable/layerlist"
+        >
+    </android.support.v7.widget.Toolbar>
     <TextView
+        android:layout_below="@+id/toolbar"
+        android:id="@+id/howtouse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="     |     How To Use"
+        android:layout_marginBottom="15dp"
+        android:textColor="#FFD740"
+        android:textSize="30sp"
+        android:fontFamily="sans-serif-condensed"/>
+    <TextView
+        android:layout_below="@+id/howtouse"
+        android:id="@+id/about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="     |     About"
+        android:layout_marginBottom="15dp"
+        android:textColor="#FFD740"
+        android:textSize="30sp"
+        android:fontFamily="sans-serif-condensed"/>
+    <TextView
+        android:layout_below="@+id/about"
         android:id="@+id/changepass"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="Change Password"
-        android:textAppearance="?android:textAppearanceLarge"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:background="#FFF3E0"
-        android:paddingLeft="50dp"/>
-
+        android:layout_height="wrap_content"
+        android:text="     |     Change Password"
+        android:layout_marginBottom="15dp"
+        android:textColor="#FFD740"
+        android:textSize="30sp"
+        android:fontFamily="sans-serif-condensed"/>
     <TextView
+        android:layout_below="@+id/changepass"
         android:id="@+id/signout"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="Sign Out"
-        android:textAppearance="?android:textAppearanceLarge"
-        android:paddingLeft="50dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:background="#FFF3E0"
-        android:layout_below="@+id/changepass"/>
+        android:layout_height="wrap_content"
+        android:text="     |     Sign Out"
+        android:layout_marginBottom="15dp"
+        android:textColor="#FFD740"
+        android:textSize="30sp"
+        android:fontFamily="sans-serif-condensed"/>
+
+
 
 
 </RelativeLayout>

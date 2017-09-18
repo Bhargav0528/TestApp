@@ -5,7 +5,6 @@ package com.example.bhargav.testapp;
  */
 
 public class stages {
-
     String name;
     Boolean value;
     public stages(){

@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.example.bhargav.testapp.Constants;
 import com.example.bhargav.testapp.MainActivity;
 import com.example.bhargav.testapp.R;
+import com.example.bhargav.testapp.UserInfoActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -103,7 +104,14 @@ public class RegisterActivity extends AppCompatActivity {
 
 
                                     ref.child(uid).child("Email").setValue(email);
-                                    startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+                                    for(int i=1;i<11;i++) {
+                                        for(int j=1;j<3;j++) {
+                                            ref.child(uid).child("week").child("week" + i).child("questions").child("question"+j).child("hintflag").setValue("no");
+                                            ref.child(uid).child("week").child("week" + i).child("questions").child("question"+j).child("status").setValue("false");
+                                            ref.child(uid).child("week").child("week" + i).child("questions").child("question"+j).child("pointflag").setValue("no");
+                                        }
+                                    }
+                                    startActivity(new Intent(RegisterActivity.this, UserInfoActivity.class));
                                     finish();
                                 }
                             }

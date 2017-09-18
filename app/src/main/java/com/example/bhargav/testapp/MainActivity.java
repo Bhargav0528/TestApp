@@ -1,16 +1,22 @@
 package com.example.bhargav.testapp;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.provider.ContactsContract;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -31,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private DatabaseReference db;
+    private ProgressDialog pdialog;
+
+    private ImageButton leaderboard,profile,questions;
 
     private static final String TAG = "MainActivity";
 
@@ -45,31 +54,67 @@ public class MainActivity extends AppCompatActivity {
     ListView lv;
     EditText nameEditTxt, propTxt, descTxt;
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.settings, menu);
         return true;
-    }
+    }*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        toolbar.setTitle(" DireHunt");
+        toolbar.setTitleTextColor(Color.parseColor("#FFD740"));
+        toolbar.setLogo(R.drawable.logo_round);
+
+        //getSupportActionBar().setCustomView(R.layout.custopm_action_bar_layout);
+        //getSupportActionBar().setLogo(R.drawable.newlogo);
+        //getSupportActionBar().setIcon(R.drawable.newlogo);
+
+        leaderboard = (ImageButton)findViewById(R.id.leaderboard);
+        questions = (ImageButton)findViewById(R.id.questions);
+        profile = (ImageButton)findViewById(R.id.profile);
         //recyclerview
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        leaderboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,LeaderBoardActivity.class));
+            }
+        });
+        questions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,MainActivity.class));
+            }
+        });
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,ProfileActivity.class));
+            }
+        });
 
         models = new ArrayList<>();
 //try now ok
         //Ya it is showing the value see the  monitor
         db = FirebaseDatabase.getInstance().getReference();
 
+        pdialog = new ProgressDialog(this, R.style.AppCompatAlertDialogStyle);
+        pdialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        pdialog.setMessage("Please Wait...");
+        pdialog.show();
         db.child("week").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                pdialog.dismiss();
                 for (DataSnapshot Postsnapshot : dataSnapshot.getChildren())
                 {
 
@@ -89,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
+                    pdialog.dismiss();
             }
         });
 
@@ -115,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //Settings button
-    @Override
+    /*@Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
@@ -129,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
 
                 return super.onOptionsItemSelected(item);
         }
-    }
+    }*/
     public interface ClickListener {
         void onClick(View view, int position);
 

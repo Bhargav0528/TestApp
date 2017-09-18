@@ -4,15 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.bhargav.testapp.Authentication.ChangespassActivity">
+    tools:context="com.example.bhargav.testapp.Authentication.ChangespassActivity"
+    android:background="#000000">
 
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/toolbar"
+        android:background="@drawable/layerlist"
+        >
+
+    </android.support.v7.widget.Toolbar>
     <TextView
+        android:layout_below="@+id/toolbar"
         android:id="@+id/tvemail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Email"
         android:layout_centerHorizontal="true"
         android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="#FFD740"
         />
     <EditText
         android:id="@+id/etem"
@@ -20,7 +31,11 @@
         android:layout_height="40dp"
         android:layout_below="@+id/tvemail"
         android:layout_marginLeft="60dp"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:background="@drawable/border3"
+        android:hint="Registered Email"
+        android:textColor="#FFD740"
+        android:textColorHint="#FFD740"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,6 +43,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:text="Change Password"
-        android:id="@+id/change"/>
+        android:id="@+id/change"
+        android:background="#FFD740"/>
 
 </RelativeLayout>

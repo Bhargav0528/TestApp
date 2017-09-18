@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.bhargav.testapp.UserInfoActivity"
+    android:background="#000000">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/newlogo"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="50dp"/>
+
+
+    <EditText
+        android:hint="Name"
+        android:textColorHint="#FFD740"
+        android:textColor="#FFD740"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#FFD740"
+        android:id="@+id/etname"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@+id/logo"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:hint="USN"
+        android:textColorHint="#FFD740"
+        android:textColor="#FFD740"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="#FFD740"
+        android:id="@+id/etusn"
+        android:layout_marginRight="20dp"
+        android:layout_below="@+id/etname"
+        android:layout_alignStart="@+id/etname" />
+
+    <ImageView
+        android:id="@+id/fab"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/tick_userinfo"
+        android:layout_below="@+id/etusn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp" />
+
+
+
+
+
+
+
+</RelativeLayout>

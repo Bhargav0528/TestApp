@@ -1,8 +1,10 @@
 package com.example.bhargav.testapp.Authentication;
 
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,6 +30,11 @@ public class ChangespassActivity extends AppCompatActivity {
         etem = (EditText)findViewById(R.id.etem);
         btchange = (Button)findViewById(R.id.change);
 
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setTitle(" Change Password");
+        toolbar.setLogo(R.drawable.logo_round);
+        toolbar.setTitleTextColor(Color.parseColor("#FFD740"));
 
 
         btchange.setOnClickListener(new View.OnClickListener() {

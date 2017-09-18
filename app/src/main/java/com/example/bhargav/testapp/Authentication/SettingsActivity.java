@@ -1,9 +1,11 @@
 package com.example.bhargav.testapp.Authentication;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
@@ -28,6 +30,12 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setTitle(" Settings");
+        toolbar.setLogo(R.drawable.logo_round);
+        toolbar.setTitleTextColor(Color.parseColor("#FFD740"));
+
         mAuth = FirebaseAuth.getInstance();
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -42,6 +50,8 @@ public class SettingsActivity extends AppCompatActivity {
                 }
             }
         };
+
+
 
         changespass = (TextView)findViewById(R.id.changepass);
         signout = (TextView)findViewById(R.id.signout);

@@ -7,6 +7,14 @@
     android:background="#000000"
     tools:context="com.example.bhargav.testapp.Authentication.RegisterActivity">
 
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/newlogo"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="50dp"/>
 
     <EditText
         android:id="@+id/etregister"
@@ -16,7 +24,8 @@
         android:backgroundTint="#FFD740"
         android:layout_centerHorizontal="true"
         android:textColorHint="#FFD740"
-        android:hint="Email" />
+        android:hint="Email"
+        android:textColor="#FFD740"/>
 
     <EditText
         android:layout_width="350dp"
@@ -29,7 +38,8 @@
         android:layout_centerHorizontal="true"
         android:textColorHint="#FFD740"
         android:layout_below="@+id/etregister"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:textColor="#FFD740"/>
     <Button
         android:id="@+id/btregister"
         android:layout_width="match_parent"

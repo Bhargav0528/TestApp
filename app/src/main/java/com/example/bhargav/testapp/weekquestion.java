@@ -1,5 +1,7 @@
 package com.example.bhargav.testapp;
 
+import android.util.Log;
+
 /**
  * Created by BhargavBV on 31-08-2017.
  */
@@ -7,15 +9,29 @@ package com.example.bhargav.testapp;
 public class weekquestion {
 
     String name,description,answer,hint,status;
-    int points;
 
-    public int getPoints() {
-        return points;
+
+    public String getPointflag() {
+        return pointflag;
     }
 
-    public void setPoints(int points) {
-        this.points = points;
+    public void setPointflag(String pointflag) {
+        this.pointflag = pointflag;
     }
+
+    String pointflag;
+
+    public String getHintflag() {
+        return hintflag;
+    }
+
+    public void setHintflag(String hintflag) {
+        this.hintflag = hintflag;
+    }
+
+    String hintflag;
+
+
 
     public weekquestion(){
 
@@ -60,4 +76,6 @@ public class weekquestion {
     public void setStatus(String status) {
         this.status = status;
     }
+
+
 }
